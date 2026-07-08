@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phoebe Tang · a board about me</title>
+<title>Phoebe Tang · Product &amp; Growth</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500;700;800&family=Karla:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#FBF6EC;
-  --kraft:#E9DCC3;
-  --ink:#3B322C;
-  --ink-soft:#7A6E63;
+  --kraft:#EBDFC9;
+  --ink:#37302A;
+  --ink-soft:#7C7166;
   --pin-red:#E60023;
-  --sticky:#FFEFA8;
-  --blush:#FFD9DE;
-  --sage:#CFE3C4;
-  --sky:#CFE4EF;
+  --sticky:#FBF0C4;
+  --blush:#F9DCDF;
+  --sage:#D9E5D2;
+  --sky:#D8E6EE;
   --card:#FFFFFF;
-  --shadow:0 2px 3px rgba(59,50,44,.08), 0 10px 24px rgba(59,50,44,.10);
-  --shadow-hover:0 4px 6px rgba(59,50,44,.10), 0 18px 40px rgba(59,50,44,.16);
+  --line:rgba(55,48,42,.16);
+  --shadow:0 2px 3px rgba(55,48,42,.07), 0 10px 24px rgba(55,48,42,.09);
+  --shadow-hover:0 4px 6px rgba(55,48,42,.09), 0 18px 40px rgba(55,48,42,.15);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -28,207 +29,246 @@ body{
   font-family:'Karla',sans-serif;
   color:var(--ink);
   background-color:var(--paper);
-  background-image:radial-gradient(rgba(59,50,44,.13) 1px, transparent 1.2px);
+  background-image:radial-gradient(rgba(55,48,42,.12) 1px, transparent 1.2px);
   background-size:22px 22px;
-  line-height:1.55;
+  line-height:1.6;
 }
+h1,h2,h3{font-family:'Fraunces',serif}
+img{display:block;max-width:100%}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pin-red);outline-offset:2px;border-radius:6px}
 
 /* ---------- header ---------- */
 .topbar{
   display:flex;align-items:center;justify-content:space-between;
-  padding:18px 28px;position:sticky;top:0;z-index:50;
-  background:rgba(251,246,236,.85);backdrop-filter:blur(8px);
-  border-bottom:1.5px dashed rgba(59,50,44,.18);
+  padding:16px 28px;position:sticky;top:0;z-index:50;
+  background:rgba(251,246,236,.88);backdrop-filter:blur(8px);
+  border-bottom:1.5px dashed var(--line);
 }
 .logo{
-  font-family:'Shantell Sans',cursive;font-weight:800;font-size:1.15rem;
+  font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;
   display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);
 }
 .logo .dot{
-  width:26px;height:26px;border-radius:50%;background:var(--pin-red);
+  width:24px;height:24px;border-radius:50%;background:var(--pin-red);
   display:inline-flex;align-items:center;justify-content:center;
-  color:#fff;font-size:.85rem;transform:rotate(-8deg);
-  box-shadow:0 2px 5px rgba(230,0,35,.35);
+  color:#fff;font-size:.7rem;box-shadow:0 2px 5px rgba(230,0,35,.3);
 }
-.topbar nav{display:flex;gap:6px}
+.topbar nav{display:flex;gap:4px;flex-wrap:wrap}
 .topbar nav a{
-  font-weight:700;font-size:.85rem;color:var(--ink);text-decoration:none;
-  padding:8px 14px;border-radius:999px;transition:background .18s;
+  font-weight:600;font-size:.85rem;color:var(--ink);text-decoration:none;
+  padding:8px 13px;border-radius:999px;transition:background .18s;
 }
-.topbar nav a:hover,.topbar nav a:focus-visible{background:rgba(59,50,44,.08)}
+.topbar nav a:hover{background:rgba(55,48,42,.07)}
 .topbar nav a.cta{background:var(--pin-red);color:#fff}
 .topbar nav a.cta:hover{background:#c50020}
-a:focus-visible,button:focus-visible{outline:3px solid var(--pin-red);outline-offset:2px;border-radius:6px}
+@media(max-width:720px){.topbar nav a:not(.cta){display:none}}
 
 /* ---------- hero ---------- */
-.hero{max-width:880px;margin:0 auto;padding:72px 24px 30px;text-align:center;position:relative}
-.hero .board-label{
-  display:inline-block;font-family:'Caveat',cursive;font-weight:700;font-size:1.35rem;
-  color:var(--ink-soft);transform:rotate(-2deg);margin-bottom:14px;
+.hero{max-width:1040px;margin:0 auto;padding:58px 24px 46px;text-align:center}
+.route{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;
+  margin-bottom:28px;font-size:.82rem;font-weight:600;color:var(--ink-soft);
 }
+.route .stop{
+  background:#fff;border:1.5px dashed var(--line);border-radius:999px;
+  padding:6px 14px;color:var(--ink);
+}
+.route .stop.here{border-style:solid;border-color:var(--pin-red);color:var(--pin-red)}
+.route .arrow{color:var(--ink-soft);font-size:.9rem}
 .hero h1{
-  font-family:'Shantell Sans',cursive;font-weight:800;
-  font-size:clamp(2.4rem,6vw,4rem);line-height:1.12;letter-spacing:-.01em;
+  font-weight:600;font-size:clamp(2.2rem,5.2vw,3.4rem);line-height:1.14;letter-spacing:-.015em;
+  max-width:820px;margin:0 auto;
 }
-.hero h1 .hl{
-  position:relative;white-space:nowrap;
-}
+.hero h1 .hl{position:relative;white-space:nowrap}
 .hero h1 .hl::after{
-  content:"";position:absolute;left:-2%;right:-2%;bottom:6%;height:38%;
-  background:var(--blush);z-index:-1;transform:rotate(-1.2deg);border-radius:4px;
+  content:"";position:absolute;left:-1%;right:-1%;bottom:8%;height:34%;
+  background:var(--blush);z-index:-1;transform:rotate(-1deg);border-radius:3px;
 }
-.hero p.sub{
-  max-width:560px;margin:20px auto 0;font-size:1.05rem;color:var(--ink-soft);
+.hero p.sub{max-width:600px;margin:20px auto 0;font-size:1.02rem;color:var(--ink-soft)}
+.hero .meta{
+  display:inline-block;margin-top:24px;background:#fff;border:1.5px solid var(--line);
+  padding:10px 22px;border-radius:12px;transform:rotate(.8deg);
+  box-shadow:var(--shadow);position:relative;font-weight:600;font-size:.88rem;
 }
-.hero .name-tag{
-  display:inline-block;margin-top:26px;background:#fff;border:1.5px solid rgba(59,50,44,.15);
-  padding:10px 22px;border-radius:14px;transform:rotate(1.5deg);
-  box-shadow:var(--shadow);position:relative;font-weight:700;font-size:.9rem;
+.hero .meta .tape{top:-11px;left:50%;transform:translateX(-50%) rotate(-2deg)}
+
+/* hero photo collage */
+.hero-photos{
+  display:flex;justify-content:center;align-items:flex-start;gap:34px;
+  margin:44px auto 6px;flex-wrap:wrap;
 }
-.name-tag .tape{top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg)}
-.hero .doodle{
-  font-family:'Caveat',cursive;font-weight:700;color:var(--pin-red);
-  font-size:1.25rem;display:block;margin-top:22px;transform:rotate(-1deg);
+.frame{
+  background:#fff;padding:12px 12px 14px;border-radius:6px;position:relative;
+  box-shadow:var(--shadow);transition:transform .22s ease, box-shadow .22s ease;
+  width:min(310px,78vw);
 }
+.frame img{border-radius:3px;width:100%;height:auto}
+.frame .cap{
+  font-family:'Caveat',cursive;font-weight:600;font-size:1.2rem;color:var(--ink);
+  padding-top:10px;text-align:center;
+}
+.frame.tilt-l{transform:rotate(-2.4deg)}
+.frame.tilt-r{transform:rotate(2deg);margin-top:26px}
+@media(hover:hover){
+  .frame:hover{transform:rotate(0) translateY(-5px);box-shadow:var(--shadow-hover);z-index:4}
+}
+.frame .tape{top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg)}
+.frame.tilt-r .tape{transform:translateX(-50%) rotate(4deg)}
 
 /* washi tape */
 .tape{
-  position:absolute;width:86px;height:24px;opacity:.9;border-radius:2px;
-  background:repeating-linear-gradient(45deg,rgba(230,0,35,.55) 0 8px,rgba(255,183,197,.55) 8px 16px);
-  box-shadow:0 1px 3px rgba(59,50,44,.15);
+  position:absolute;width:80px;height:22px;opacity:.85;border-radius:2px;
+  background:repeating-linear-gradient(45deg,rgba(230,0,35,.4) 0 8px,rgba(255,196,206,.5) 8px 16px);
+  box-shadow:0 1px 3px rgba(55,48,42,.14);
 }
-.tape.mint{background:repeating-linear-gradient(45deg,rgba(112,168,120,.5) 0 8px,rgba(207,227,196,.6) 8px 16px)}
-.tape.sun{background:repeating-linear-gradient(45deg,rgba(240,190,40,.5) 0 8px,rgba(255,239,168,.65) 8px 16px)}
-.tape.blue{background:repeating-linear-gradient(45deg,rgba(90,150,190,.45) 0 8px,rgba(207,228,239,.6) 8px 16px)}
+.tape.mint{background:repeating-linear-gradient(45deg,rgba(112,168,120,.4) 0 8px,rgba(217,229,210,.55) 8px 16px)}
+.tape.sun{background:repeating-linear-gradient(45deg,rgba(224,178,48,.4) 0 8px,rgba(251,240,196,.6) 8px 16px)}
+.tape.blue{background:repeating-linear-gradient(45deg,rgba(90,150,190,.35) 0 8px,rgba(216,230,238,.55) 8px 16px)}
 
-/* ---------- filter tabs ---------- */
-.tabs{
-  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
-  padding:26px 20px 8px;position:relative;z-index:5;
+/* ---------- sections ---------- */
+section.block{max-width:1120px;margin:0 auto;padding:34px 22px 10px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+.sec-head h2{font-weight:600;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em;position:relative}
+.sec-head h2::after{
+  content:"";position:absolute;left:0;right:-6px;bottom:2px;height:10px;
+  background:var(--sticky);z-index:-1;transform:rotate(-.6deg);
 }
-.tab{
-  font-family:'Karla',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;
-  border:1.5px solid rgba(59,50,44,.22);background:#fff;color:var(--ink);
-  padding:9px 18px;border-radius:999px;transition:all .18s;
+.sec-head .kicker{
+  font-family:'Caveat',cursive;font-weight:600;font-size:1.2rem;color:var(--ink-soft);
+  transform:rotate(-1deg);
 }
-.tab:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
-/* ---------- board ---------- */
-.board{max-width:1180px;margin:0 auto;padding:28px 22px 90px;columns:3;column-gap:26px}
-@media(max-width:960px){.board{columns:2}}
-@media(max-width:600px){.board{columns:1}}
+/* card grids */
+.grid{display:grid;gap:24px;grid-template-columns:repeat(2,1fr)}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid.three{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid,.grid.three{grid-template-columns:1fr}}
 
 .pin{
-  break-inside:avoid;margin:0 0 26px;position:relative;
-  background:var(--card);border-radius:18px;padding:24px 22px 20px;
-  box-shadow:var(--shadow);
-  transition:transform .22s ease, box-shadow .22s ease;
+  position:relative;background:var(--card);border-radius:16px;padding:26px 24px 22px;
+  box-shadow:var(--shadow);transition:transform .22s ease, box-shadow .22s ease;
 }
-.pin.r1{transform:rotate(-1.3deg)}
-.pin.r2{transform:rotate(1.1deg)}
-.pin.r3{transform:rotate(-.6deg)}
-.pin.r4{transform:rotate(1.8deg)}
+.pin.r1{transform:rotate(-.7deg)}
+.pin.r2{transform:rotate(.6deg)}
+.pin.r3{transform:rotate(-.4deg)}
 @media(hover:hover){
-  .pin:hover{transform:rotate(0deg) translateY(-5px);box-shadow:var(--shadow-hover);z-index:4}
+  .pin:hover{transform:rotate(0) translateY(-4px);box-shadow:var(--shadow-hover);z-index:4}
 }
-.pin .tape{top:-12px;left:26px;transform:rotate(-4deg)}
-.pin.tape-right .tape{left:auto;right:26px;transform:rotate(5deg)}
-
+.pin .tape{top:-11px;left:24px;transform:rotate(-3deg)}
+.pin.tape-right .tape{left:auto;right:24px;transform:rotate(4deg)}
 .pin .eyebrow{
-  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-soft);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px;align-items:baseline;
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:10px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap;
 }
-.pin .eyebrow .when{letter-spacing:0;text-transform:none;font-weight:500}
-.pin h3{
-  font-family:'Shantell Sans',cursive;font-weight:700;font-size:1.28rem;line-height:1.25;margin-bottom:10px;
-}
-.pin p{font-size:.93rem;color:var(--ink-soft);margin-bottom:10px}
-.pin p strong{color:var(--ink)}
+.pin .eyebrow .when{letter-spacing:.02em;text-transform:none;font-weight:600}
+.pin h3{font-weight:600;font-size:1.25rem;line-height:1.3;margin-bottom:10px;letter-spacing:-.01em}
+.pin p{font-size:.92rem;color:var(--ink-soft);margin-bottom:10px}
+.pin p strong{color:var(--ink);font-weight:700}
 .pin .note{
   font-family:'Caveat',cursive;font-weight:600;font-size:1.15rem;color:var(--pin-red);
-  margin-top:6px;transform:rotate(-.5deg);display:inline-block;
+  display:inline-block;transform:rotate(-.5deg);margin-top:2px;
 }
-
-/* stat stickers */
-.stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
-.stat{
-  background:var(--paper);border:1.5px dashed rgba(59,50,44,.25);
-  border-radius:10px;padding:6px 11px;font-size:.8rem;font-weight:700;
-}
-.stat em{font-style:normal;color:var(--pin-red)}
-
-/* save button */
-.save{
-  position:absolute;top:14px;right:14px;opacity:0;pointer-events:none;
-  background:var(--pin-red);color:#fff;border:none;cursor:pointer;
-  font-family:'Karla',sans-serif;font-weight:700;font-size:.82rem;
-  padding:8px 16px;border-radius:999px;transition:opacity .18s, transform .18s;
-  transform:translateY(-4px);
-}
-@media(hover:none){.save{opacity:1;pointer-events:auto;transform:none;position:static;margin-top:10px}}
-.pin:hover .save,.pin:focus-within .save{opacity:1;pointer-events:auto;transform:translateY(0)}
-.save.saved{background:var(--ink)}
-
-/* variants */
-.pin.sticky-note{background:var(--sticky);border-radius:6px;box-shadow:var(--shadow), inset 0 -34px 40px -34px rgba(59,50,44,.18)}
-.pin.sticky-note h3{font-size:1.15rem}
+.pin.sticky{background:var(--sticky);border-radius:6px}
 .pin.blush{background:var(--blush)}
 .pin.sage{background:var(--sage)}
 .pin.sky{background:var(--sky)}
 .pin.kraft{background:var(--kraft)}
-.pin.polaroid{padding:14px 14px 18px}
-.pin.polaroid .photo{
-  border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center;
-  font-size:2.6rem;margin-bottom:12px;color:#fff;
-}
-.pin.polaroid .photo.grad-a{background:linear-gradient(135deg,#FF9AA2,#E60023)}
-.pin.polaroid .photo.grad-b{background:linear-gradient(135deg,#7FB285,#3E6B48)}
-.pin.polaroid .photo.grad-c{background:linear-gradient(135deg,#F5C36B,#D97C2B)}
-.pin.polaroid .caption{
-  font-family:'Caveat',cursive;font-weight:600;font-size:1.25rem;text-align:center;color:var(--ink);
-}
+.pin .photo{border-radius:10px;overflow:hidden;margin-bottom:16px;border:1px solid var(--line)}
+.pin .photo img{width:100%;height:auto}
 
-/* chips for skills */
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.stat{
+  background:var(--paper);border:1.5px dashed var(--line);
+  border-radius:9px;padding:5px 11px;font-size:.79rem;font-weight:700;
+}
+.stat em{font-style:normal;color:var(--pin-red)}
+.pin .link-row{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.pin .link-row a{
+  font-size:.82rem;font-weight:700;color:var(--ink);text-decoration:none;
+  border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;background:#fff;
+  transition:all .18s;
+}
+.pin .link-row a:hover{border-color:var(--pin-red);color:var(--pin-red)}
+.pin .link-row .soon{opacity:.55;pointer-events:none}
+
+/* video cover cards (click to open) */
+.video-link{
+  display:block;position:relative;border-radius:10px;overflow:hidden;
+  border:1px solid var(--line);margin:4px 0 12px;text-decoration:none;
+}
+.video-link .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.video-link .play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;background:rgba(230,0,35,.92);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);transition:transform .18s;
+}
+.video-link .play::after{
+  content:"";border-style:solid;border-width:9px 0 9px 15px;
+  border-color:transparent transparent transparent #fff;margin-left:4px;
+}
+@media(hover:hover){.video-link:hover .play{transform:translate(-50%,-50%) scale(1.1)}}
+.video-link .bar{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(transparent,rgba(0,0,0,.75));
+  color:#fff;font-size:.8rem;font-weight:700;padding:28px 14px 10px;
+}
+.video-link.li-card{
+  background:linear-gradient(135deg,#3D6BE0,#7CA2F5);
+  aspect-ratio:16/9;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  color:#fff;padding:22px;gap:14px;
+}
+.video-link.li-card .quote{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;line-height:1.35;max-width:340px;
+}
+.video-link.li-card .play{position:static;transform:none;background:rgba(255,255,255,.22);flex:none}
+@media(hover:hover){.video-link.li-card:hover .play{transform:scale(1.1)}}
+.video-link.li-card .where{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
 .chip{
-  background:#fff;border:1.5px solid rgba(59,50,44,.2);border-radius:999px;
-  font-size:.78rem;font-weight:700;padding:5px 11px;
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;
+  font-size:.78rem;font-weight:600;padding:5px 11px;
 }
 
-/* section heading inside board flow */
-.board-note{
-  break-inside:avoid;margin:0 0 26px;text-align:center;
-  font-family:'Caveat',cursive;font-weight:700;font-size:1.5rem;color:var(--ink-soft);
-  padding:14px 8px;border:2px dashed rgba(59,50,44,.2);border-radius:16px;transform:rotate(-.8deg);
-  background:rgba(255,255,255,.5);
+/* placeholder pin */
+.pin.placeholder{
+  border:2px dashed var(--line);background:rgba(255,255,255,.55);box-shadow:none;
+  display:flex;flex-direction:column;justify-content:center;text-align:center;min-height:200px;
 }
+.pin.placeholder h3{color:var(--ink-soft)}
+.pin.placeholder .note{color:var(--ink-soft)}
 
-/* ---------- footer ---------- */
+/* skills strip */
+.skills-strip{max-width:1120px;margin:26px auto 0;padding:0 22px}
+.skills-strip .pin{padding:22px 24px}
+
+/* hobby cards: two photos side by side */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.duo .ph{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.duo .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+@media(max-width:420px){.duo{grid-template-columns:1fr}.duo .ph img{aspect-ratio:4/3}}
+
+/* footer */
 footer{
-  border-top:1.5px dashed rgba(59,50,44,.18);
-  padding:56px 24px 70px;text-align:center;background:rgba(255,255,255,.45);
+  margin-top:70px;border-top:1.5px dashed var(--line);
+  padding:56px 24px 66px;text-align:center;background:rgba(255,255,255,.45);
 }
-footer h2{font-family:'Shantell Sans',cursive;font-weight:800;font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:10px}
-footer p{color:var(--ink-soft);max-width:460px;margin:0 auto 24px}
+footer h2{font-weight:600;font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:10px;letter-spacing:-.01em}
+footer p{color:var(--ink-soft);max-width:480px;margin:0 auto 24px}
 .contact-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .contact-row a{
   text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink);
-  background:#fff;border:1.5px solid rgba(59,50,44,.2);border-radius:999px;
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;
   padding:11px 20px;transition:all .18s;
 }
 .contact-row a:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .contact-row a.primary{background:var(--pin-red);border-color:var(--pin-red);color:#fff}
-footer .sig{font-family:'Caveat',cursive;font-weight:600;font-size:1.2rem;color:var(--ink-soft);margin-top:34px;transform:rotate(-1deg)}
-
-/* toast */
-#toast{
-  position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
-  background:var(--ink);color:var(--paper);font-weight:700;font-size:.9rem;
-  padding:12px 22px;border-radius:999px;opacity:0;pointer-events:none;
-  transition:opacity .25s, transform .25s;z-index:99;box-shadow:var(--shadow-hover);
+footer .sig{
+  font-family:'Caveat',cursive;font-weight:600;font-size:1.15rem;color:var(--ink-soft);
+  margin-top:32px;
 }
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -239,176 +279,214 @@ footer .sig{font-family:'Caveat',cursive;font-weight:600;font-size:1.2rem;color:
 <body>
 
 <header class="topbar">
-  <a class="logo" href="#top"><span class="dot">✦</span>phoebe's board</a>
+  <a class="logo" href="#top"><span class="dot">✦</span>Phoebe Tang</a>
   <nav>
-    <a href="#board">Pins</a>
-    <a href="#contact" class="cta">Say hi</a>
+    <a href="#projects">Projects</a>
+    <a href="#work">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#life">Off the Clock</a>
+    <a href="#contact" class="cta">Contact</a>
   </nav>
 </header>
 
 <section class="hero" id="top">
-  <span class="board-label">✎ a board about me · est. Philadelphia → Bay Area</span>
-  <h1>Hi, I'm Phoebe —<br>I turn <span class="hl">messy ideas</span> into products people save.</h1>
-  <p class="sub">Self-taught product builder from a liberal-arts background. I shipped two AI consumer products while finishing a stats master's at Penn — and I collect inspiration the way I build: curiously, visually, one pin at a time.</p>
-  <span class="name-tag"><span class="tape mint"></span>Phoebe Tang · Product / Growth · UPenn M.S. Statistics '26</span>
-  <span class="doodle">↓ scroll to browse my pins ↓</span>
+  <div class="route" aria-label="My journey">
+    <span class="stop">China</span><span class="arrow">→</span>
+    <span class="stop">the UK</span><span class="arrow">→</span>
+    <span class="stop">Philadelphia</span><span class="arrow">→</span>
+    <span class="stop here">San Francisco Bay Area</span>
+  </div>
+  <h1>I turn <span class="hl">messy ideas</span> into products people keep coming back to.</h1>
+  <p class="sub">Product builder with a liberal-arts eye and a statistician's discipline.</p>
+  <span class="meta"><span class="tape mint"></span>Product · Growth · UPenn M.S. Statistics &amp; Measurement '26</span>
+
+  <div class="hero-photos">
+    <figure class="frame tilt-l">
+      <span class="tape"></span>
+      <img src="images/grad-shield.jpg" alt="Phoebe in graduation dress in front of the Penn shield" width="933" height="1400">
+      <figcaption class="cap">Penn, Class of 2026 ✦</figcaption>
+    </figure>
+    <figure class="frame tilt-r">
+      <span class="tape blue"></span>
+      <img src="images/grad-library.jpg" alt="Phoebe raising her graduation cap at the Fisher Fine Arts Library" width="933" height="1400">
+      <figcaption class="cap">caps off, Philadelphia</figcaption>
+    </figure>
+  </div>
 </section>
 
-<div class="tabs" role="tablist" aria-label="Filter pins">
-  <button class="tab active" data-filter="all">All pins</button>
-  <button class="tab" data-filter="shipped">Things I shipped</button>
-  <button class="tab" data-filter="work">Where I've worked</button>
-  <button class="tab" data-filter="life">Off the clock</button>
-</div>
+<!-- ================= PROJECTS ================= -->
+<section class="block" id="projects">
+  <div class="sec-head">
+    <h2>Projects</h2>
+    <span class="kicker">things I built &amp; shipped</span>
+  </div>
+  <div class="grid">
+    <article class="pin r1">
+      <span class="tape"></span>
+      <div class="eyebrow"><span>Co-founder · Product &amp; Growth</span><span class="when">Mar 2025 – Present</span></div>
+      <h3>Quickmeets — AI-powered dating app</h3>
+      <div class="photo"><img src="images/appstore-quickmeets.jpg" alt="Quickmeets on the Apple App Store: 4.7 stars across 649 ratings" width="1000" height="1000"></div>
+      <p>Designed and shipped an <strong>AI visual discovery &amp; matching engine</strong> end-to-end: defining how image inputs, user preferences, and visual signals translate into a consumer recommendation experience. Led go-to-market through campus campaigns and social content across TikTok, Instagram, and RedNote.</p>
+      <div class="stats">
+        <span class="stat"><em>3K+</em> registered users</span>
+        <span class="stat"><em>4.7★</em> App Store</span>
+        <span class="stat"><em>600+</em> ratings</span>
+      </div>
+      <a class="video-link li-card" href="https://www.linkedin.com/posts/louis-chung1_i-left-my-six-figure-job-to-build-an-ai-dating-activity-7377394045649608704-vhCo" target="_blank" rel="noopener">
+        <span class="quote">"I left my six-figure job to build an AI dating app."</span>
+        <span class="play" aria-hidden="true"></span>
+        <span class="where">Watch the founder story on LinkedIn ↗</span>
+      </a>
+    </article>
 
-<main class="board" id="board">
+    <article class="pin r2 tape-right">
+      <span class="tape sun"></span>
+      <div class="eyebrow"><span>Founder · 2025 Wharton Hack-AI-thon Finalist</span><span class="when">Mar 2025 – Present</span></div>
+      <h3>Unicue — AI college application consulting platform</h3>
+      <div class="photo"><img src="images/hackathon.jpg" alt="Phoebe and her team at the Wharton Hack-AI-thon" width="1400" height="933"></div>
+      <p>Identified a <strong>$1.6B+ market gap</strong> in personalized college consulting; ran <strong>15+ in-depth student interviews</strong> to validate pain points. Built an <strong>AI chatbot</strong> that leads structured, survey-style conversations to uncover academic interests, career inclinations, and personal goals — applying <strong>RAG</strong> for real-time content updates. Led the full lifecycle from problem discovery and prompt engineering to LLM API integration, UX/UI, and prototype launch, earning early adoption from <strong>50+ student users</strong>.</p>
+      <a class="video-link" href="https://youtu.be/VKvcr--AX_g" target="_blank" rel="noopener">
+        <img class="thumb" src="https://img.youtube.com/vi/VKvcr--AX_g/hqdefault.jpg" alt="Unicue demo video — Wharton Hack-AI-thon" loading="lazy">
+        <span class="play" aria-hidden="true"></span>
+        <span class="bar">▶ Watch the Unicue demo on YouTube</span>
+      </a>
+      <div class="link-row">
+        <a href="https://ai-analytics.wharton.upenn.edu/for-students/wharton-hack-ai-thon/" target="_blank" rel="noopener">Wharton Hack-AI-thon ↗</a>
+      </div>
+    </article>
 
-  <article class="pin r1" data-cat="shipped">
-    <span class="tape"></span>
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Co-founder · Product & Growth</span><span class="when">2025–now</span></div>
-    <h3>Quickmeets — an AI dating app people actually rate</h3>
-    <p>Designed and shipped an <strong>AI visual discovery &amp; matching engine</strong> end-to-end: how image inputs, preferences, and visual signals become a recommendation experience. Then took it to market myself — campus campaigns and social content across TikTok, Instagram, and RedNote.</p>
-    <div class="stats">
-      <span class="stat"><em>3K+</em> users</span>
-      <span class="stat"><em>4.7★</em> App Store</span>
-      <span class="stat"><em>600+</em> ratings</span>
-    </div>
-    <span class="note">visual signals → matches. sounds familiar? ☺</span>
-  </article>
+    <article class="pin r3 sky">
+      <span class="tape blue"></span>
+      <div class="eyebrow"><span>Co-founder</span><span class="when">Feb 2026 – Present</span></div>
+      <h3>UPennow — campus discovery platform</h3>
+      <p>Identified fragmented campus information as a core student pain point; defined and launched an MVP for browsing <strong>5,000+ courses and events</strong>. Built an <strong>LLM-based extraction pipeline</strong> that structures unstandardized event data from dozens of sources, cutting manual curation to near zero.</p>
+      <div class="stats">
+        <span class="stat"><em>1.5–3K</em> MAU in early pilots</span>
+        <span class="stat"><em>LLM</em> data pipeline</span>
+      </div>
+      <div class="link-row">
+        <a href="https://upennow.com" target="_blank" rel="noopener">Visit upennow.com ↗</a>
+      </div>
+    </article>
 
-  <article class="pin r2 sky tape-right" data-cat="shipped">
-    <span class="tape blue"></span>
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Co-founder</span><span class="when">2026–now</span></div>
-    <h3>UPennow — one place to discover everything on campus</h3>
-    <p>Campus info was scattered everywhere, so I built the fix: a discovery platform for <strong>5,000+ courses and events</strong>, powered by an LLM pipeline that structures messy event data from dozens of sources — manual curation cut to near zero.</p>
-    <div class="stats">
-      <span class="stat"><em>1.5–3K</em> MAU in pilot</span>
-      <span class="stat"><em>LLM</em> data pipeline</span>
-    </div>
-  </article>
+    <article class="pin r1 placeholder">
+      <h3>More projects on the way</h3>
+      <p>Case studies, prototypes, and process notes are being pinned up next.</p>
+      <span class="note">watch this space ✦</span>
+    </article>
+  </div>
+</section>
 
-  <article class="pin r3 polaroid" data-cat="life">
-    <button class="save" type="button">Save</button>
-    <div class="photo grad-a" aria-hidden="true">💃</div>
-    <p class="caption">swing &amp; latin dance nights — my favorite kind of A/B test: lead or follow?</p>
-  </article>
+<!-- ================= WORK EXPERIENCE ================= -->
+<section class="block" id="work">
+  <div class="sec-head">
+    <h2>Work Experience</h2>
+    <span class="kicker">where I sharpened the craft</span>
+  </div>
+  <div class="grid three">
+    <article class="pin r2">
+      <span class="tape sun"></span>
+      <div class="eyebrow"><span>ISACA · Chicago</span><span class="when">May – Aug 2025</span></div>
+      <h3>Product Specialist Intern</h3>
+      <p>Analyzed <strong>50K+ user behavioral records</strong> (SQL, Salesforce), interviewed <strong>20+ global users</strong>, and benchmarked 8+ competitor learning products. Translated findings into recommendations — including practice-quiz concepts that informed launches across <strong>10+ credential exams</strong> — and contributed to early Student Hub strategy.</p>
+    </article>
 
-  <article class="pin r2" data-cat="work">
-    <span class="tape sun"></span>
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>ISACA · Product Specialist Intern</span><span class="when">Summer 2025</span></div>
-    <h3>Research that shipped, not shelfware</h3>
-    <p>Dug through <strong>50K+ behavioral records</strong> (SQL + Salesforce), interviewed <strong>20+ global users</strong>, benchmarked 8+ competitor products — and turned it into recommendations, including practice-quiz concepts that informed launches across <strong>10+ credential exams</strong>.</p>
-    <span class="note">insight is only real once it ships</span>
-  </article>
+    <article class="pin r1 kraft">
+      <span class="tape mint"></span>
+      <div class="eyebrow"><span>Sustainable Living Guide · Austin</span><span class="when">Jan – Apr 2025</span></div>
+      <h3>UX Designer Intern</h3>
+      <p>Defined a <strong>North Star + driver metrics</strong> framework to diagnose engagement drop-off, then redesigned key course flows against it — improving course completion by <strong>15%</strong> and cutting design-validation cycles by <strong>20%</strong> with research-grounded Figma prototypes.</p>
+    </article>
 
-  <article class="pin r4 sticky-note" data-cat="shipped work">
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Toolbox</span></div>
-    <h3>Stuff on my desk ✂️</h3>
-    <div class="chips">
-      <span class="chip">User research</span><span class="chip">A/B testing</span>
-      <span class="chip">PRDs</span><span class="chip">Figma</span>
-      <span class="chip">SQL</span><span class="chip">Python</span>
-      <span class="chip">R</span><span class="chip">Funnel analysis</span>
-      <span class="chip">LLM APIs</span><span class="chip">RAG</span>
-      <span class="chip">Recommendation systems</span><span class="chip">Prompt design</span>
-    </div>
-  </article>
+    <article class="pin r3 blush tape-right">
+      <span class="tape"></span>
+      <div class="eyebrow"><span>Xiaomi · Global</span><span class="when">Jan – Jul 2024</span></div>
+      <h3>Global Monetization Intern</h3>
+      <p>Supported monetization for preload app distribution across <strong>28 countries</strong> on a business line generating <strong>~$20K/day</strong>. Analyzed the end-to-end funnel by region, category, and default behavior, improving downloads by <strong>5%</strong> across target segments while protecting user experience.</p>
+    </article>
+  </div>
 
-  <article class="pin r1 blush" data-cat="work">
-    <span class="tape"></span>
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Xiaomi · Global Monetization Intern</span><span class="when">2024</span></div>
-    <h3>Growth at scale: 28 markets, one funnel</h3>
-    <p>Supported monetization for preload app distribution across <strong>28 countries</strong> on a line generating <strong>~$20K/day</strong>. Analyzed the end-to-end funnel by region, category, and default behavior — lifting downloads <strong>+5%</strong> across target segments while protecting user experience.</p>
-  </article>
+  <div class="skills-strip">
+    <article class="pin r1 sticky">
+      <div class="eyebrow"><span>Toolbox</span></div>
+      <div class="chips">
+        <span class="chip">Product strategy</span><span class="chip">User research</span>
+        <span class="chip">A/B testing</span><span class="chip">PRDs</span>
+        <span class="chip">Figma</span><span class="chip">Jira</span>
+        <span class="chip">SQL</span><span class="chip">Python</span>
+        <span class="chip">R</span><span class="chip">Power BI</span>
+        <span class="chip">Funnel analysis</span><span class="chip">LLM APIs</span>
+        <span class="chip">RAG</span><span class="chip">Recommendation systems</span>
+      </div>
+    </article>
+  </div>
+</section>
 
-  <article class="pin r3 polaroid" data-cat="life">
-    <button class="save" type="button">Save</button>
-    <div class="photo grad-b" aria-hidden="true">🎾</div>
-    <p class="caption">tennis, skiing, piano — patterns, rhythm, and the occasional unforced error</p>
-  </article>
+<!-- ================= EDUCATION ================= -->
+<section class="block" id="education">
+  <div class="sec-head">
+    <h2>Education</h2>
+    <span class="kicker">stories × statistics</span>
+  </div>
+  <div class="grid">
+    <article class="pin r1 sage">
+      <span class="tape mint"></span>
+      <div class="eyebrow"><span>University of Pennsylvania</span><span class="when">2024 – 2026</span></div>
+      <h3>M.S. in Statistics &amp; Measurement</h3>
+      <p>GPA 3.8/4.0 · Coursework: Statistical Computing, Data Processing &amp; Analytics, Causal Inference, Applied Machine Learning.</p>
+    </article>
+    <article class="pin r2 tape-right">
+      <span class="tape sun"></span>
+      <div class="eyebrow"><span>University of Science and Technology Beijing</span><span class="when">2020 – 2024</span></div>
+      <h3>B.A. in English Literature</h3>
+      <p>GPA 3.8/4.0 · One degree taught me to read stories, the other to read data — product work lives exactly in between.</p>
+    </article>
+  </div>
+</section>
 
-  <article class="pin r2 kraft tape-right" data-cat="work">
-    <span class="tape mint"></span>
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Sustainable Living Guide · UX Design Intern</span><span class="when">2025</span></div>
-    <h3>Metrics-first design</h3>
-    <p>Defined a <strong>North Star + driver metrics</strong> framework to diagnose engagement drop-off, then redesigned key course flows against it — <strong>+15% course completion</strong>, and design-validation cycles cut by <strong>20%</strong> with research-grounded Figma prototypes.</p>
-  </article>
+<!-- ================= OFF THE CLOCK ================= -->
+<section class="block" id="life">
+  <div class="sec-head">
+    <h2>Off the Clock</h2>
+    <span class="kicker">where the energy comes from</span>
+  </div>
+  <div class="grid">
+    <article class="pin r2">
+      <span class="tape"></span>
+      <div class="eyebrow"><span>PLBD · Penn Latin &amp; Ballroom Dancing Club</span><span class="when">Vice President</span></div>
+      <h3>Latin Dancing</h3>
+      <div class="duo">
+        <div class="ph"><img src="images/dance-latin.jpg" alt="Phoebe performing Latin dance with a partner under Ivy League banners" width="1200" height="862"></div>
+        <div class="ph"><img src="images/dance-team.jpg" alt="PLBD team after a showcase at the Harold Prince Theatre" width="800" height="1200"></div>
+      </div>
+      <p>Serving as VP of PLBD — organizing showcases, socials, and bringing new dancers onto the floor. Cha-cha and rumba are where I do my best thinking about rhythm, timing, and reading a partner's signals.</p>
+      <span class="note">lead or follow — always in sync ✦</span>
+    </article>
 
-  <article class="pin r4" data-cat="life">
-    <span class="tape sun"></span>
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Field notes</span></div>
-    <h3>I collect ways of reading people</h3>
-    <p>Tarot spreads, BaZi charts, people-watching in cafés — I'm endlessly curious about how humans decide. It's the same instinct that makes me love user research: everyone leaves signals, if you know where to look.</p>
-    <span class="note">divination is just qualitative research with better props ✦</span>
-  </article>
+    <article class="pin r3 sky tape-right">
+      <span class="tape blue"></span>
+      <div class="eyebrow"><span>Snowboarding</span><span class="when">Year one &amp; counting</span></div>
+      <h3>Chasing powder (and catching edges)</h3>
+      <div class="duo">
+        <div class="ph"><img src="images/ski-lift.jpg" alt="Phoebe with friends on a ski lift" width="1200" height="900"></div>
+        <div class="ph"><img src="images/ski-gondola.jpg" alt="Phoebe in a purple snow suit next to a snow-buried gondola in Hokkaido" width="900" height="1200"></div>
+      </div>
+      <p>A proud rookie snowboarder, one season in — still logging more falls than turns, but every one of them is a data point. Favorite mountain so far: <strong>Sapporo, Hokkaido</strong>. Favorite condition: powder, always powder.</p>
+      <span class="note">fall fast, learn faster — JAPOW believer ❄</span>
+    </article>
+  </div>
+</section>
 
-  <article class="pin r1 sage" data-cat="work life">
-    <button class="save" type="button">Save</button>
-    <div class="eyebrow"><span>Education</span><span class="when">2020–2026</span></div>
-    <h3>English Literature × Statistics</h3>
-    <p><strong>UPenn</strong> — M.S. Statistics &amp; Measurement (GPA 3.8). <strong>USTB</strong> — B.A. English Literature (GPA 3.8). One degree taught me to read stories; the other taught me to read data. Product lives exactly in between.</p>
-  </article>
-
-  <article class="pin r3 polaroid" data-cat="shipped life">
-    <button class="save" type="button">Save</button>
-    <div class="photo grad-c" aria-hidden="true">🚧</div>
-    <p class="caption">portfolio pins coming soon — case studies, prototypes &amp; process notes</p>
-  </article>
-
-  <article class="pin r2 board-note" data-cat="all-note">
-    every pin here is true — happy to walk you through any of them ☕
-  </article>
-
-</main>
-
+<!-- ================= FOOTER ================= -->
 <footer id="contact">
-  <h2>Let's pin something together.</h2>
-  <p>Looking for APM / product ops / growth roles where curiosity counts. Currently in Philadelphia, heading to the Bay Area.</p>
+  <h2>Let's build something together.</h2>
+  <p>Open to APM, product operations, and growth roles. Currently in Philadelphia, relocating to the San Francisco Bay Area.</p>
   <div class="contact-row">
     <a class="primary" href="mailto:phoebetang0826@gmail.com">Email me</a>
     <a href="https://www.linkedin.com/in/phoebe-tang3" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="tel:+12676882255">(267) 688-2255</a>
   </div>
   <p class="sig">— made with paper, tape &amp; a little bit of code · Phoebe Tang 2026</p>
 </footer>
 
-<div id="toast" role="status">Saved to “People to hire” ✦</div>
-
-<script>
-(function(){
-  // filter tabs
-  var tabs=document.querySelectorAll('.tab');
-  var pins=document.querySelectorAll('.pin[data-cat]');
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      tabs.forEach(function(x){x.classList.remove('active')});
-      t.classList.add('active');
-      var f=t.getAttribute('data-filter');
-      pins.forEach(function(p){
-        var cats=p.getAttribute('data-cat');
-        p.style.display=(f==='all'||cats.indexOf(f)>-1||cats==='all-note')?'':'none';
-      });
-    });
-  });
-  // save buttons
-  var toast=document.getElementById('toast');
-  var timer;
-  document.querySelectorAll('.save').forEach(function(b){
-    b.addEventListener('click',function(){
-      b.classList.add('saved');b.textContent='Saved';
-      toast.classList.add('show');
-      clearTimeout(timer);
-      timer=setTimeout(function(){toast.classList.remove('show')},2200);
-    });
-  });
-})();
-</script>
 </body>
 </html>
